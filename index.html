@@ -49,6 +49,18 @@ ul,
     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
     <script>
+        Array.from( document.querySelectorAll('a') ).forEach(( anch ) => {
+            const href = anch.getAttribute('href');
+            const host = window.location.host;
+
+            if ( href.indexOf( host ) === -1 ) {
+                anch.addEventListener('click', ( e ) => {
+                    e.preventDefault();
+
+                    window.open( href );
+                });
+            }
+        });
         function getJSON() {
             var content = "EGGERS_CONTENTS.json";
             return new Promise(function(resolve, reject) {
