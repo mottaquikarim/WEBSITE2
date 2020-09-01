@@ -10,6 +10,14 @@
       <meta property="og:description" content="Simple HTML page with dark background and fullscreen capability for use as a blackboard with Zoom annotations." />
       <meta property="og:image" content="https://github.com/mottaquikarim/WEBSITE2/blob/master/zoom/blackboard.jpg?raw=true" />
       <style>
+         html {
+            height: 100%;
+            min-height: 100%;
+         }
+         body {
+            height: 100%;
+            background-color: black;
+         }
          nav {
            position: fixed;
            top: 0;
@@ -25,7 +33,7 @@
          }
       </style>
    </head>
-   <body style="background-color: black;">
+   <body>
       <nav>
          <a href="#" onclick="openFullscreen(event);">Fullscreen</a>
          <a href="https://airtable.com/shr6K5CSj8C3PHXfE" target="_blank">About</a>
