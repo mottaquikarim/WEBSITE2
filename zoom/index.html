@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Blackboard for Zoom</title>
+      <meta name="description" content="Blackboard background for Zoom">
+      <meta name="author" content="Taq Karim">
+      <style>
+         nav {
+           position: fixed;
+           top: 0;
+           right: 0;
+           padding: 10px;
+         }
+         a {
+           display: inline-block;
+           text-decoration: none;
+           color: white;
+           padding: 5px;
+           font-family: Helvetica;
+         }
+      </style>
+   </head>
+   <body style="background-color: black;">
+      <nav>
+         <a href="#" onclick="openFullscreen(event);">Fullscreen</a>
+         <a href="https://airtable.com/shr6K5CSj8C3PHXfE" target="_blank">About</a>
+      </nav>
+      <script>
+         const elem = document.querySelector("html");
+         /* When the openFullscreen() function is executed, open the video in fullscreen.
+         Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+         function openFullscreen(e) {
+           e.preventDefault();
+           if (elem.requestFullscreen) {
+             elem.requestFullscreen();
+           } else if (elem.mozRequestFullScreen) { /* Firefox */
+             elem.mozRequestFullScreen();
+           } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+             elem.webkitRequestFullscreen();
+           } else if (elem.msRequestFullscreen) { /* IE/Edge */
+             elem.msRequestFullscreen();
+           }
+         }
+      </script>
+   </body>
+</html>
